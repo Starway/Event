@@ -1,0 +1,19 @@
+<ion-modal-view>
+     <ion-header-bar class="bar bar-header bar-positive">
+      <h1 class="title">Select State</h1>        
+    </ion-header-bar>
+    
+    <ion-content>        
+        <ion-radio ng-repeat="item in stateList"
+                      ng-model="item.checked" 
+                        ng-click="updateState(item)"
+                      ng-checked="item.checked">
+          {{ item.text }}
+        </ion-radio>            
+    </ion-content>
+    
+    <ion-footer-bar align-title="center" class="buttons bar-positive" ng-click="done()">
+        <h1 class="title">Done</h1>
+    </ion-footer-bar>    
+</ion-modal-view>
+

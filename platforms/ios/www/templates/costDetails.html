@@ -1,0 +1,56 @@
+
+<ion-view view-title="Cost Details">
+    
+    <ion-content class="padding" style="position:relative;">
+        <div class="list">
+<!--
+            <label class="item item-input input-select">
+                <span>Categories</span> 
+                <select ng-options="methodOption.text for methodOption in methodOptions track by methodOption.id" ng-model="method"></select>
+            </label>
+            
+-->                        
+            <label align-title="center" class="item buttons" ng-controller="CategoriesCtrl" ng-click="show()">
+                <h4 class="title">Category</h4>
+                <div class="item-text-wrap">
+                    <button class="button button-small">{{categoriesData.selectedCategories}}</button>
+                </div>
+            </label>                                    
+        </div>
+        
+        
+        
+        
+        <div ng-if="categoriesList.id==0" class="fade-animation">
+            this is cost form 1
+        </div>
+        <div ng-if="[1,2,3].indexOf(categoriesList.id)>=0" class="fade-animation">
+            {{categoriesList.text}}
+            this is cost form 2
+        </div>
+        
+<!--
+        <div ng-if="method.id==0" class="fade-animation">
+            this is cost form 1
+        </div>
+        <div ng-if="[1,2,3].indexOf(method.id)>=0" class="fade-animation">
+            {{method.text}}
+            this is cost form 2
+        </div>
+-->
+    
+        
+        
+        
+        
+    </ion-content>
+    
+<!--
+     <a href="#/app/costDetails">
+        <ion-footer-bar class="buttons bar-assertive" >
+            <h1 class="title">Next</h1>              
+        </ion-footer-bar>
+    </a>
+-->
+    
+</ion-view>

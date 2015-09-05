@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/HOME/Desktop/EventManagement/platforms/ios/build/emulator/Event.app/www/lib/ionic/js/ionic.min.js",
+        "/Users/HOME/Desktop/EventManagement/www/js/config.js"
+    ]
+}

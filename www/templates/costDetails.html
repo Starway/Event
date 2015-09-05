@@ -1,0 +1,61 @@
+
+<ion-view view-title="Cost Details">
+    
+    <ion-content class="padding" style="position:relative;">
+        <div class="list">                       
+            <label align-title="center" class="item buttons" ng-controller="CategoriesCtrl" ng-click="show()">
+                <h4 class="title">Category</h4>
+                <div class="item-text-wrap">
+                    <button class="button button-small">{{categoriesData.selectedCategories}}</button>
+                </div>
+            </label>  
+            
+            <label class="item item-input">
+                <input type="text" placeholder="Description">
+            </label> 
+            
+            <label class="item item-input">
+                <input type="text" placeholder="Costing (RM)">
+            </label> 
+            
+            <label align-title="center" class="item buttons" ng-controller="SelectPersonsCtrl" ng-click="show()">
+                <h4 class="title">Person In-Charge(s)</h4>
+                <div class="item-text-wrap">
+                    <span ng-repeat="person in personsList">
+                        <span ng-show="person.checked">
+                            <button class="button button-small">{{person.text}}                                                       </button>
+                        </span>
+                    </span>
+                </div>
+            </label>
+            
+            <label class="item item-input">
+                <input type="text" placeholder="Remark">
+            </label> 
+            
+            <label align-title="center" class="item buttons" ng-controller="SelectTeamsCtrl" ng-click="show()">
+                <h4 class="title">Deadline</h4>
+            </label> 
+            
+        </div>
+        
+        
+        
+        
+       
+        
+
+    
+        
+        
+        
+        
+    </ion-content>
+    
+    <ion-footer-bar class="buttons bar-assertive" ng-controller="CostDetailsCtrl" ng-click="done()">
+        <h1 class="title">Done</h1>              
+    </ion-footer-bar>
+    
+    
+    
+</ion-view>

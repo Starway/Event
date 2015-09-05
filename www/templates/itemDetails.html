@@ -1,0 +1,68 @@
+<ion-view view-title="Item Details">    
+    <ion-content class="padding" style="position:relative;">
+        <div class="list">                       
+            <label align-title="center" class="item buttons" ng-controller="CategoriesCtrl" ng-click="show()">
+                <h4 class="title">Category</h4>
+                <div class="item-text-wrap">
+                    <button class="button button-small">{{categoriesData.selectedCategories}}</button>
+                </div>
+            </label>  
+            
+            <label align-title="center" class="item buttons" ng-controller="ItemCtrl" ng-click="show()">
+                <h4 class="title">Item</h4>
+                <div class="item-text-wrap">
+                    <button class="button button-small">{{itemData.selectedItem}}</button>
+                </div>
+            </label>  
+            
+            <label class="item">
+                Stock Balance: 
+            </label> 
+            
+            <label class="item">
+                Unit Price: RM15.00
+            </label> 
+            
+            <label class="item item-input">
+                <input type="text" placeholder="Quantity Request">
+            </label> 
+            
+            <label class="item">
+                Total Cost: RM
+            </label> 
+            
+            <label class="item item-input">
+                <input type="text" placeholder="Remark">
+            </label> 
+            
+            <label align-title="center" class="item buttons" ng-controller="SalesOfficeCtrl" ng-click="show()">
+                <h4 class="title">Sales Office</h4>
+                <div class="item-text-wrap">
+                    <button class="button button-small">{{officeData.selectedOffice}}</button>
+                </div>
+            </label>  
+            
+            <label class="item item-input">
+                <input type="text" placeholder="Requestor">
+            </label> 
+            
+            <label class="item item-input">
+                <input type="text" placeholder="Purpose">
+            </label> 
+            
+            <label align-title="center" class="item buttons" ng-controller="CollectionMethodCtrl" ng-click="show()">
+                <h4 class="title">Collection Method</h4>
+                <div class="item-text-wrap">
+                    <button class="button button-small">{{collectionMethodData.selectedCollectionMethod}}</button>
+                </div>
+            </label>              
+        </div>        
+    </ion-content>
+    
+    <ion-footer-bar class="buttons bar-assertive" ng-controller="CostDetailsCtrl" ng-click="done()">
+        <h1 class="title">Done</h1>              
+    </ion-footer-bar>
+    
+    
+    
+</ion-view>

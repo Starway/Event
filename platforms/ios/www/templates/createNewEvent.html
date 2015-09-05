@@ -1,0 +1,245 @@
+<ion-view view-title="Create New Event">
+  <ion-content>
+      <div style="margin-left:10px">
+        <h4>Event Details</h1>
+      </div>
+            
+      <div class="list">
+        <label align-title="center" class="item buttons" ng-controller="SelectTeamsCtrl" ng-click="show()">
+            <h4 class="title">Team(s)</h4>
+            <div class="item-text-wrap">
+                <span ng-repeat="team in teamsList">
+                    <span ng-show="team.checked">
+                        <button class="button button-small">{{team.text}}                                               </button>
+                    </span>
+                </span>
+            </div>
+        </label>
+        <label align-title="center" class="item buttons" ng-controller="SelectProjectsCtrl" ng-click="show()">
+            <h4 class="title">Project(s)</h4>
+            <div class="item-text-wrap">
+                <span ng-repeat="project in projectsList">
+                    <span ng-show="project.checked">
+                        <button class="button button-small">{{project.text}}                                               </button>
+                    </span>
+                </span>
+            </div>
+        </label>
+        <label align-title="center" class="item buttons" ng-controller="SelectPersonsCtrl" ng-click="show()">
+            <h4 class="title">Person In-Charge(s)</h4>
+            <div class="item-text-wrap">
+                <span ng-repeat="person in personsList">
+                    <span ng-show="person.checked">
+                        <button class="button button-small">{{person.text}}                                               </button>
+                    </span>
+                </span>
+            </div>
+        </label>
+        <label align-title="center" class="item buttons" ng-controller="SelectCountryCtrl" ng-click="show()">
+            
+            <h4 class="title">Country</h4>
+            <div class="item-text-wrap">
+<!--
+                <span ng-repeat="country in countryList">            
+                    <span ng-show="country.checked">
+                        <button class="button button-small">{{country.text}}                                               </button>
+                    </span>
+                </span>
+-->
+                
+<!--               <span ng-show="itemId">-->
+<!--
+                {{itemId}}
+                        <button class="button button-small">{{items[itemId].Name}}                                               </button>
+-->
+<!--                </span>-->
+<!--
+                 <span ng-repeat="i in items" ng-value="i.Id" ng-model="countryData.Id">            
+                    <span ng-show="i.selected">
+                        <button class="button button-small">{{i.Name}}</button>
+                    </span>                                          
+                </span>
+-->
+                
+                
+                <button class="button button-small">{{countryData.selectedCountry}}</button>
+                
+                
+<!--
+                <ion-radio ng-repeat="i in items" ng-value="i.Id" ng-model="$parent.$parent.item" >                 {{i.Name}}
+            </ion-radio>
+-->
+                    
+                
+            </div>
+        </label>
+        <label align-title="center" class="item buttons" ng-controller="SelectStateCtrl" ng-click="show()">
+            <h4 class="title">State</h4>
+            <div class="item-text-wrap">
+                <button class="button button-small">{{stateData.selectedState}}</button>
+            </div>            
+        </label>
+        <label class="item item-input">
+            <input type="text" placeholder="Venue">
+        </label>
+        <label class="item item-input">
+            <input type="text" placeholder="Size of Rental Space (Sq.ft.)">
+        </label>  
+        <label align-title="center" class="item buttons" ng-controller="SelectTeamsCtrl" ng-click="show()">
+            <h4 class="title">Start Date &amp; Time</h4>
+        </label>
+        <label align-title="center" class="item buttons" ng-controller="SelectTeamsCtrl" ng-click="show()">
+            <h4 class="title">End Date &amp; Time</h4>
+        </label>
+        <label align-title="center" class="item buttons" ng-controller="SelectTeamsCtrl" ng-click="show()">
+            <h4 class="title">Booth Installation Date &amp; Time</h4>
+        </label>
+        <label align-title="center" class="item buttons" ng-controller="SelectTeamsCtrl" ng-click="show()">
+            <h4 class="title">Booth Dismantlement Date &amp; Time</h4>
+        </label>
+          
+           <label >
+<!--           <ion-google-place placeholder="Enter an address, Apt# and ZIP" ng-model="location" />-->
+<!--               <input type="text" readonly="readonly" class="ion-google-place" autocomplete="off">-->
+        </label>
+    </div>
+      
+      
+      
+      
+      
+      
+      
+      <div ng-controller="TestCtrl">
+
+
+  <form id="form" role="form" name="but">
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="" ng-model="form.typesEnabled">
+        Types
+      </label>
+    </div>
+
+
+    <div class="indent">
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="geocode" checked ng-model="form.type" ng-disabled="!form.typesEnabled">
+          Geocode
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="establishment" ng-model="form.type" ng-disabled="!form.typesEnabled">
+          Establishment
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios3" value="(regions)" ng-model="form.type" ng-disabled="!form.typesEnabled">
+          Regions
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios4" value="(cities)" ng-model="form.type" ng-disabled="!form.typesEnabled">
+          Cities
+        </label>
+      </div>
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="" ng-model="form.boundsEnabled">
+        Bounds
+      </label>
+    </div>
+
+    <div class="indent">
+      <div class="title">Southwest Corner</div>
+      <label>
+        lat:
+        <input type="number" ng-model="form.bounds.SWLat" ng-disabled="!form.boundsEnabled">
+      </label>
+      <label>
+        lng:
+        <input type="number" ng-model="form.bounds.SWLng" ng-disabled="!form.boundsEnabled">
+      </label>
+      <div class="title">Northeast Corner</div>
+      <label>
+        lat:
+        <input type="number" ng-model="form.bounds.NELat" ng-disabled="!form.boundsEnabled">
+      </label>
+      <label>
+        lng:
+        <input type="number" ng-model="form.bounds.NELng" ng-disabled="!form.boundsEnabled">
+      </label>
+    </div>
+
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="" ng-model="form.componentEnabled">
+        Country
+      </label>
+    </div>
+    <div class="indent">
+      <select class="form-control" ng-model="form.country" ng-disabled="!form.componentEnabled">
+        <option>ca</option>
+        <option>us</option>
+        <option>gb</option>
+      </select>
+    </div>
+    <br><br>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="" ng-model="form.watchEnter">
+        Watch Enter
+      </label>
+    </div>
+
+
+    <div class="form-group move-down">
+      <label for="Autocomplete2">Autocomplete Model</label>
+      <input type="text" id="Autocomplete2" ng-model="autocomplete" class="form-control" ng-autocomplete options="options" details="details"/>
+
+      <br>
+      <b>autocomplete</b>: {{autocomplete}}
+      <br><br>
+      <b>details (formatted address)</b>: {{details.formatted_address}}
+
+    </div>
+
+  </form>
+
+</div>
+     
+<div>
+
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+
+  <script type="text/javascript" src="/www/js/ngAutocomplete.js"></script>
+  <script type="text/javascript" src="/www/js/advanced.js"></script>
+  <script type="text/javascript" src="/www/js/ngAutocomplete.js"></script>
+
+</div>
+      
+      
+      
+      
+      
+      
+      
+      
+  </ion-content>
+
+    <a href="#/app/cost">
+        <ion-footer-bar class="buttons bar-assertive" >
+            <h1 class="title">Next</h1>              
+        </ion-footer-bar>
+    </a>    
+</ion-view>
+
